@@ -1,0 +1,167 @@
+/* style.css */
+
+body {
+  margin: 0px;
+  font-family: "Lora", serif; /* Default body font */
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-family: "Oswald", sans-serif; /* Heading font */
+  font-weight: 700; /* Bold weight */
+}
+
+h2,
+h3,
+h4 {
+  font-family: "Oswald", sans-serif; /* Subheadings */
+}
+
+p {
+  font-family: "Lora", serif; /* Paragraph font */
+  line-height: 1.6; /* Improve readability */
+}
+
+a {
+  font-family: "Lora", serif; /* Link font */
+  font-weight: 500; /* Normal weight */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    color: white;
+    background-color: #184d99;
+  }
+
+  .hero-section {
+    background-color: #184d99;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    padding: 5% 2%; /* Leave space on both sides */
+  }
+
+  video {
+    width: 100vh; /* Allow width to adjust automatically */
+    height: 25vh; /* Set height to 60% of the viewport height */
+    max-width: 100%; /* Ensure it does not exceed the container width */
+    border-radius: 10px;
+  }
+
+  .hero-section-link {
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; /* Distribute space evenly between items */
+    align-items: center; /* Align items vertically centered */
+  }
+
+  .hero-section-link a {
+    background-color: #134080; /* Green background for items */
+    text-align: center;
+    color: white; /* White text color */
+    padding: 10px; /* Padding inside each item */
+    border-radius: 5px; /* Rounded corners */
+    flex: 1; /* Allow items to grow and fill space equally */
+    margin: 15px 10px 0px 10px; /* Add margin for spacing between items */
+  }
+
+  #apply-now {
+    background-color: #ffd11a;
+    color: black;
+  }
+
+  .college-motive {
+    background-color: maroon;
+    width: 100%;
+    height: 55vh;
+  }
+
+  .college-motive h1 {
+    color: #ffd11a;
+    text-align: justify;
+    padding-left: 10px;
+    padding-top: 25px;
+  }
+
+  .college-motive p {
+    padding: 15px;
+    color: white;
+    text-align: justify;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-item {
+    position: relative;
+    height: 250px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .text-overlay {
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .slider-container {
+    background-image: linear-gradient(to top right, #8b5cf6, #ec4899);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+  }
+  .item {
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 0;
+  }
+  #next,
+  #prev {
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
+  }
+}
