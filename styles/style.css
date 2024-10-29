@@ -32,7 +32,10 @@ a:hover {
   text-decoration: underline; /* Underline on hover for emphasis */
 }
 
+/* common CSS for all the screen sizes ends here*/
+
 @media screen and (max-width: 480px) {
+  /* This is the responsive design media quire for mobile devices with max-width of 480px*/
   header {
     color: white;
     background-color: #184d99;
