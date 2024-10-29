@@ -53,6 +53,22 @@ a:hover {
     border-radius: 10px;
   }
 
+  .on-video-link {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    gap: 20px;
+    margin: -40px 0px 30px 15px;
+  }
+
+  .on-video-link a {
+    color: white;
+    background-color: #134080;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #3383fa;
+  }
+
   .hero-section-link {
     display: flex; /* Enable flexbox */
     justify-content: space-between; /* Distribute space evenly between items */
@@ -120,14 +136,21 @@ a:hover {
     text-align: left;
   }
 
+  #slider-heading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -50px;
+  }
+
   .slider-container {
-    background-image: linear-gradient(to top right, #8b5cf6, #ec4899);
-    min-height: 100vh;
+    background-image: none;
+    min-height: 60vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: monospace;
+    z-index: -1;
   }
 
   .slider {
@@ -138,30 +161,48 @@ a:hover {
   }
   .item {
     position: absolute;
-    width: 200px;
+    width: 230px;
     height: 320px;
     text-align: justify;
-    background-color: #fff;
     border-radius: 10px;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* Semi-transparent white for readability */
     padding: 20px;
     transition: 0.5s;
-    left: calc(50% - 110px);
+    left: calc(50% - 133px);
     top: 0;
+    background-size: cover; /* Cover the entire item */
+    background-position: center; /* Center the image */
   }
   #next,
   #prev {
     position: absolute;
     top: 40%;
-    color: #fff;
+    color: black;
     background-color: transparent;
     border: none;
     font-size: xxx-large;
     font-family: monospace;
     font-weight: bold;
-    left: 400px;
+    left: 10px;
   }
   #next {
     left: unset;
-    right: 400px;
+    right: 10px;
+  }
+
+  #view-faculties-link {
+    text-align: center;
+  }
+
+  #view-faculties-link a {
+    color: black;
+    background-color: #ffd11a;
+    padding: 13px;
+    border-radius: 10px;
   }
 }

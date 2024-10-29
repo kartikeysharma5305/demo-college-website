@@ -34,12 +34,15 @@
     </header>
 
     <section class="hero-section">
-      <video
-        src="images/3209298-uhd_3840_2160_25fps.mp4"
-        autoplay
-        muted
-        loop
-      ></video>
+      <video autoplay muted loop>
+        <source src="images/3209298-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="on-video-link">
+        <a href="#">something</a>
+        <a href="#">something</a>
+      </div>
 
       <div class="hero-section-link">
         <a href="button">Something</a>
@@ -72,7 +75,9 @@
           class="grid-item"
           style="background-image: url('images/courses.jpg')"
         >
-          <div class="text-overlay">180+ <br />Courses Offered</div>
+          <div class="text-overlay">
+            <h1>180+ <br />Courses Offered</h1>
+          </div>
         </div>
         <div
           class="grid-item"
@@ -118,68 +123,41 @@
       </div>
     </section>
 
+    <div id="slider-heading">
+      Multiple Disciplines, <br />
+      Infinite Possibilities
+    </div>
+
     <section class="slider-container">
       <div class="slider">
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 1</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 2</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 3</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 4</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 5</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 6</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
-        <div class="item">
+        <div class="item" style="background-image: url('images/library.jpg')">
           <h1>Slide 7</h1>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere magni
-          magnam unde ipsam repudiandae explicabo expedita labore, sequi minus
-          neque beatae voluptatum, quasi accusamus quia quis voluptas laborum
-          ad! Ab totam doloribus, excepturi possimus rem vel quia fugit
-          molestiae officiis!
         </div>
         <button id="next">></button>
         <button id="prev"><</button>
       </div>
     </section>
+    <div id="view-faculties-link">
+      <a href="#">View all Faculties</a>
+    </div>
 
     <script src="scrips/script.js"></script>
   </body>
