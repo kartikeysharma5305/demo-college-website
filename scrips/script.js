@@ -24,7 +24,7 @@ function loadShow() {
   for (var i = active + 1; i < items.length; i++) {
     stt++; // Increment counter for each subsequent slide
     // Apply transformations and styles to create a sliding effect
-    items[i].style.transform = `translateX(${120 * stt}px) scale(${
+    items[i].style.transform = `translateX(${140 * stt}px) scale(${
       1 - 0.2 * stt
     }) perspective(16px) rotateY(-1deg)`; // Move and scale slides
     items[i].style.zIndex = -stt; // Set z-index to stack behind the active slide
@@ -38,7 +38,7 @@ function loadShow() {
   for (var i = active - 1; i >= 0; i--) {
     stt++; // Increment counter for each preceding slide
     // Apply transformations and styles similarly to create a sliding effect
-    items[i].style.transform = `translateX(${-120 * stt}px) scale(${
+    items[i].style.transform = `translateX(${-140 * stt}px) scale(${
       1 - 0.2 * stt
     }) perspective(16px) rotateY(1deg)`; // Move and scale slides in the opposite direction
     items[i].style.zIndex = -stt; // Set z-index to stack behind the active slide
