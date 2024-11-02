@@ -34,7 +34,7 @@ a:hover {
 
 /* common CSS for all the screen sizes ends here*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* This is the responsive design media quire for mobile devices with max-width of 480px*/
   header {
     color: white;
@@ -47,11 +47,12 @@ a:hover {
     flex-direction: column;
     justify-content: center; /* Center horizontally */
     padding: 5% 2%; /* Leave space on both sides */
+    margin: 0;
   }
 
   video {
-    width: 100vh; /* Allow width to adjust automatically */
-    height: 25vh; /* Set height to 60% of the viewport height */
+    max-width: 100%; /* Allow width to adjust automatically */
+    height: 25%; /* Set height to 60% of the viewport height */
     max-width: 100%; /* Ensure it does not exceed the container width */
     border-radius: 10px;
   }
@@ -60,15 +61,15 @@ a:hover {
     display: flex;
     flex-direction: row;
     background-color: transparent;
-    gap: 20px;
-    margin: -40px 0px 30px 15px;
+    gap: 5%;
+    margin: -16% 0% 9% 3%;
   }
 
   .on-video-link a {
     color: white;
     background-color: #134080;
-    padding: 12px;
-    border-radius: 5px;
+    padding: 3%;
+    border-radius: 8%;
     background-color: #3383fa;
   }
 
@@ -82,10 +83,10 @@ a:hover {
     background-color: #134080; /* Green background for items */
     text-align: center;
     color: white; /* White text color */
-    padding: 10px; /* Padding inside each item */
-    border-radius: 5px; /* Rounded corners */
+    padding: 3%; /* Padding inside each item */
+    border-radius: 10%; /* Rounded corners */
     flex: 1; /* Allow items to grow and fill space equally */
-    margin: 15px 10px 0px 10px; /* Add margin for spacing between items */
+    margin: 3% 2% 1% 2%; /* Add margin for spacing between items */
   }
 
   #apply-now {
@@ -96,18 +97,19 @@ a:hover {
   .college-motive {
     background-color: maroon;
     width: 100%;
-    height: 55vh;
+    height: 75%;
   }
 
   .college-motive h1 {
     color: #ffd11a;
     text-align: justify;
-    padding-left: 10px;
-    padding-top: 25px;
+    padding-left: 6%;
+    padding-top: 10%;
   }
 
   .college-motive p {
-    padding: 15px;
+    padding: 5% 5% 15% 5%;
+    margin-bottom: 5%;
     color: white;
     text-align: justify;
   }
@@ -115,33 +117,42 @@ a:hover {
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
+    gap: 3%;
+    padding: 4% 4% 0% 4%;
   }
 
   .grid-item {
     position: relative;
-    height: 250px; /* Adjust the height as needed */
+    height: 15.625rem; /* Adjust the height as needed = 250px */
     background-size: cover;
     background-position: center;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     overflow: hidden;
+  }
+
+  .counter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: -1.15rem;
+    font-family: "Oswald", sans-serif;
+    transition: all 0.3s ease;
   }
 
   .text-overlay {
     display: flex;
-    flex-direction: column-reverse;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    flex-direction: column;
     color: white;
-    padding: 10px;
+    padding: 3%;
     text-align: left;
+    font-family: "Oswald", sans-serif;
   }
 
   #slider-heading {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 200%;
     margin-bottom: -50px;
   }
 
@@ -159,28 +170,36 @@ a:hover {
   .slider {
     position: relative;
     width: 100%;
-    height: 370px;
+    height: 30rem;
     overflow: hidden;
   }
   .item {
+    top: 0;
+    left: 0;
     position: absolute;
-    width: 230px;
-    height: 320px;
-    text-align: justify;
-    border-radius: 10px;
+    width: 12rem;
+    height: 18rem;
+    border-radius: 5%;
     background-color: rgba(
       255,
       255,
       255,
       0.8
     ); /* Semi-transparent white for readability */
-    padding: 20px;
+    margin-top: 20%;
+    padding: 1.25rem;
     transition: 0.5s;
-    left: calc(50% - 133px);
+    left: calc(50% - 7.3rem);
     top: 0;
     background-size: cover; /* Cover the entire item */
     background-position: center; /* Center the image */
   }
+
+  .item h1 {
+    text-align: center;
+    margin-top: 16rem;
+  }
+
   #next,
   #prev {
     position: absolute;
@@ -203,9 +222,39 @@ a:hover {
   }
 
   #view-faculties-link a {
+    display: inline-block;
     color: black;
     background-color: #ffd11a;
-    padding: 13px;
-    border-radius: 10px;
+    padding: 0.9rem;
+    margin-top: -4rem;
+    border-radius: 15px;
   }
+
+  .news-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns for mobile */
+    gap: 1rem; /* space between items */
+    padding: 1rem; /* padding around the grid */
+  }
+
+  .news-grid-item {
+    background-color: #f0f0f0; /* light gray background */
+    border: 1px solid #ccc; /* border around items */
+    padding: 20px; /* inner padding */
+    text-align: center; /* center text */
+  }
+
+  .news-grid-item {
+    margin: 0;
+  }
+
+  .news-grid-item img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 769) {
 }
