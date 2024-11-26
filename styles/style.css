@@ -38,11 +38,11 @@ a:hover {
   /* This is the responsive design media quire for mobile devices with max-width of 480px*/
   header {
     color: white;
-    background-color: #184d99;
+    background-color: maroon;
   }
 
   .hero-section {
-    background-color: #184d99;
+    background-color: #052346;
     display: flex; /* Use flexbox for centering */
     flex-direction: column;
     justify-content: center; /* Center horizontally */
@@ -53,7 +53,6 @@ a:hover {
   video {
     max-width: 100%; /* Allow width to adjust automatically */
     height: 25%; /* Set height to 60% of the viewport height */
-    max-width: 100%; /* Ensure it does not exceed the container width */
     border-radius: 10px;
   }
 
@@ -67,10 +66,9 @@ a:hover {
 
   .on-video-link a {
     color: white;
-    background-color: #134080;
     padding: 3%;
     border-radius: 8%;
-    background-color: #3383fa;
+    background-color: #0056a6;
   }
 
   .hero-section-link {
@@ -80,7 +78,7 @@ a:hover {
   }
 
   .hero-section-link a {
-    background-color: #134080; /* Green background for items */
+    background-color: #4caf50; /* Green background for items */
     text-align: center;
     color: white; /* White text color */
     padding: 3%; /* Padding inside each item */
@@ -95,13 +93,13 @@ a:hover {
   }
 
   .college-motive {
-    background-color: maroon;
+    background-color: #052346;
     width: 100%;
     height: 75%;
   }
 
   .college-motive h1 {
-    color: #ffd11a;
+    color: #0056a6;
     text-align: justify;
     padding-left: 6%;
     padding-top: 10%;
@@ -147,19 +145,28 @@ a:hover {
     font-family: "Oswald", sans-serif;
   }
 
-  #slider-heading {
+  .slider-heading h1 {
+    background-color: #004494;
     text-align: center;
     margin-top: 20%;
+    margin-bottom: 0%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
     font-size: 200%;
-    margin-bottom: -50px;
+    padding: 2rem;
+  }
+
+  .slider-heading p {
+    margin: 0rem 0rem -10rem 0rem;
+    background-color: #004494;
+    text-align: center;
+    font-family: "Lora", serif; /* Paragraph font */
   }
 
   .slider-container {
-    background-image: none;
-    min-height: 60vh;
-    margin: 0;
+    background-color: #004494;
+    min-height: 40rem;
+    margin-top: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,35 +176,35 @@ a:hover {
 
   .slider {
     position: relative;
-    width: 100%;
-    height: 30rem;
-    overflow: hidden;
+    width: 100%; /* Full width for responsiveness */
+    height: 26.5rem; /* Fixed height for the slider */
+    overflow: hidden; /* Hide overflow content */
+    margin: 0rem 0rem -10rem 0rem;
+    z-index: 2;
   }
+
   .item {
-    top: 0;
-    left: 0;
     position: absolute;
-    width: 12rem;
-    height: 18rem;
-    border-radius: 5%;
+    width: 50%; /* Width of each item */
+    height: 80%; /* Full height of the slider */
+    border-radius: 5%; /* Rounded corners */
     background-color: rgba(
       255,
       255,
       255,
       0.8
     ); /* Semi-transparent white for readability */
-    margin-top: 20%;
-    padding: 1.25rem;
-    transition: 0.5s;
-    left: calc(50% - 7.3rem);
-    top: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transitions */
     background-size: cover; /* Cover the entire item */
     background-position: center; /* Center the image */
+    top: 0rem; /* Align to the top */
+    left: calc(
+      50% - 25%
+    ); /* Center item horizontally (50% - half of its width) */
   }
 
   .item h1 {
     text-align: center;
-    margin-top: 16rem;
   }
 
   #next,
@@ -211,6 +218,8 @@ a:hover {
     font-family: monospace;
     font-weight: bold;
     left: 10px;
+    border: black solid 0.2rem;
+    border-radius: 55px;
   }
   #next {
     left: unset;
@@ -219,42 +228,1119 @@ a:hover {
 
   #view-faculties-link {
     text-align: center;
+    margin-top: -4rem;
   }
 
   #view-faculties-link a {
-    display: inline-block;
+    display: inline-block; /* Change to inline-block to respect width */
     color: black;
     background-color: #ffd11a;
     padding: 0.9rem;
-    margin-top: -4rem;
-    border-radius: 15px;
+    border-radius: 1rem;
+    width: 32%; /* Set a fixed width */
   }
 
-  .news-grid-container {
+  .campus-news-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .campus-news h1 {
+    margin-top: 3rem;
+  }
+  .campus-news h1,
+  p {
+    text-align: center;
+  }
+
+  .news-post-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%; /* Space between news items */
+    width: auto;
+    padding: 0.2rem;
+    background-color: black;
+  }
+
+  .news-item h2 {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: -1%;
+  }
+
+  .news-item-a {
+    margin-left: auto;
+    background-color: #0056a6; /* Original background color */
+    padding: 0.5rem;
+    color: white; /* Changed to white for better contrast */
+    text-decoration: none;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease,
+      box-shadow 0.3s ease; /* Smooth transitions */
+  }
+
+  .news-item-a:hover {
+    text-decoration: none;
+    background-color: #004494; /* Darker shade on hover */
+    color: #ffd700; /* Change text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  }
+
+  .news-item p {
+    padding-left: 0.5rem;
+    text-align: left;
+  }
+
+  .news-image {
+    width: 100%; /* Make images responsive */
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 20px; /* Optional: rounded corners */
+  }
+
+  #more-news-button {
+    background-color: #ffd700;
+    width: 30%;
+    padding: 1rem;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .student-feedback-section {
+    background-color: #4a90e2;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Keep this as is since it's a viewport height */
+  }
+
+  .student-feedback-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
+    width: 18.75rem; /* 300px */
+  }
+
+  .student-feedback-header {
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-description {
+    font-size: 0.875rem; /* 14px */
+    color: #333;
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .student-feedback-testimonial {
+    background-color: #f9f9f9;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
+    opacity: 0; /* Start as invisible */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  }
+
+  .student-feedback-testimonial.visible {
+    opacity: 1; /* Fully visible when this class is added */
+  }
+
+  .stars {
+    color: #ffd700;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-testimonial-text {
+    font-size: 0.875rem; /* 14px */
+    color: #333;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-testimonial-name {
+    font-weight: bold;
+    margin-bottom: 0.3125rem; /* 5px */
+  }
+
+  .student-feedback-testimonial-designation {
+    font-size: 0.75rem; /* 12px */
+    color: #777;
+  }
+
+  .testimonial-image {
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
+    border-radius: 50%;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .student-feedback-button {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .student-feedback-button i {
+    color: #4a90e2;
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .upcoming-events {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .events-div h1,
+  .events-div p,
+  .events-div a {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
+  .event-grid {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of boxes */
+    justify-content: center; /* Center the boxes */
+    gap: 1.25rem; /* Add space between boxes */
+  }
+
+  .event-item {
+    background-color: #004494; /* Light background for the boxes */
+    border-radius: 0.625rem; /* Rounded corners */
+    padding: 0.625rem; /* Padding inside the box */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 90%;
+  }
+
+  .events-div {
+    text-align: center; /* Center text for all child elements */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-div h6 {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Change to center for consistency */
+    color: white;
+    background-color: black;
+    margin-bottom: -4.84rem;
+    margin-left: 1.97rem;
+    padding: 2rem;
+    width: fit-content; /* Keeps width based on content */
+    border-radius: 0rem 0rem 10rem 10rem;
+  }
+
+  .events-div img {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    border-radius: 2rem;
+  }
+
+  .event-grid a {
+    background-color: #ffd700;
+    padding: 0.5rem;
+  }
+
+  .events-div p {
+    color: white;
+    background-color: #004494;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+
+  .events-div h1 {
+    background-color: #004494;
+    text-align: left;
+    padding: 0.7rem 0rem 0.7rem 0rem;
+  }
+
+  .view-all-event-button {
+    text-align: center;
+  }
+
+  .view-all-event-button button {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ffd700;
+    border-radius: 10px;
+  }
+
+  .alumni-section {
+    background-color: #4a6cf7;
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .alumni-header {
+    text-align: left;
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .alumni-header span {
+    display: inline-block;
+    position: relative;
+    padding-top: 4rem; /* Space between text and line */
+    font-size: 1.125rem; /* 18px */
+    font-weight: normal;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+  .custom-overline-alumni::before {
+    content: "";
+    position: absolute;
+    left: 0rem; /* Increase length on left side */
+    right: 5rem; /* Increase length on right side */
+    top: 3.2rem; /* Adjust this for vertical spacing */
+    height: 3px; /* Thickness of the line */
+    background-color: #ffd700; /* Color of the line */
+  }
+
+  .alumni-header h1 {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .alumni-header p {
+    margin-left: 1rem;
+    text-align: left;
+  }
+
+  .alumni-card {
+    background-color: #fff;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 18.75rem; /* 300px */
+    text-align: center;
+    margin-bottom: 1.25rem; /* 20px */
+    transition: transform 0.5s ease; /* Smooth transition */
+  }
+  .alumni-card img {
+    width: 100%;
+    border-top-left-radius: 0.625rem; /* 10px */
+    border-top-right-radius: 0.625rem; /* 10px */
+  }
+  .alumni-card h3 {
+    text-align: left;
+    font-size: 1.5rem; /* 24px */
+    margin: 0.625rem 0; /* 10px */
+    margin-left: 1rem;
+  }
+  .alumni-card p {
+    font-size: 0.875rem; /* 14px */
+    color: #555;
+    text-align: left;
+    margin-left: 1rem;
+  }
+  .alumni-card button {
+    background-color: #fff;
+    border: 0.125rem solid #000; /* 2px */
+    border-radius: 1.25rem; /* 20px */
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.625rem; /* 10px */
+    margin-bottom: 1rem;
+  }
+  .alumni-card button:hover {
+    background-color: #f0f0f0;
+  }
+  .alumni-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem; /* 20px */
+  }
+  .alumni-navigation button {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  .faculty-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.25rem; /* 20px */
+  }
+
+  .faculty-container h1 {
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .view-all {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .view-all i {
+    margin-right: 0.3125rem; /* 5px */
+    margin-bottom: 1rem;
+  }
+
+  .faculty-card {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 2 columns for mobile */
-    gap: 1rem; /* space between items */
-    padding: 1rem; /* padding around the grid */
+    place-items: center;
+    background-color: #4a5eff;
+    padding: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
+    border-radius: 0.3125rem; /* 5px */
+    width: auto;
+    text-align: center;
   }
 
-  .news-grid-item {
-    background-color: #f0f0f0; /* light gray background */
-    border: 1px solid #ccc; /* border around items */
-    padding: 20px; /* inner padding */
-    text-align: center; /* center text */
+  .faculty-card img {
+    width: 6.25rem; /* 100px */
+    height: 6.25rem; /* 100px */
+    border-radius: 50%;
+    margin-bottom: 0.625rem; /* 10px */
   }
 
-  .news-grid-item {
-    margin: 0;
+  .faculty-name {
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    color: #000;
   }
 
-  .news-grid-item img {
-    margin: 0;
+  .faculty-department {
+    font-size: 0.875rem; /* 14px */
+    color: #000;
+  }
+
+  .social-icons ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+  }
+
+  .social-icons li {
+    display: inline; /* Display items in a line */
+    margin: 0 10px; /* Space between icons */
+  }
+
+  .social-icons a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Icon color */
+    font-size: 24px; /* Icon size */
+  }
+
+  .social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+
+  .slideshow-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Four columns */
+    gap: 10px; /* Space between grid items */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .image-box {
+    position: relative;
+    width: auto; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10%;
+  }
+
+  .image-slides {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+    width: 100%; /* Full width for sliding effect */
+  }
+
+  .image-slide {
+    min-width: 100%; /* Each slide takes full container width */
+    height: 100%; /* Full height */
+  }
+
+  img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block; /* Remove bottom space */
   }
 }
 
-@media screen and (min-width: 769) {
+@media screen and (min-width: 769px) {
+  header {
+    color: white;
+    background-color: maroon;
+  }
+
+  .hero-section {
+    background-color: #052346;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    padding: 5% 2%; /* Leave space on both sides */
+    margin: 0;
+  }
+
+  video {
+    max-width: 100%; /* Allow width to adjust automatically */
+    height: 25%; /* Set height to 60% of the viewport height */
+    border-radius: 10px;
+  }
+
+  .on-video-link {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    gap: 5%;
+    margin: -16% 0% 9% 3%;
+  }
+
+  .on-video-link a {
+    color: white;
+    padding: 3%;
+    border-radius: 8%;
+    background-color: #0056a6;
+  }
+
+  .hero-section-link {
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; /* Distribute space evenly between items */
+    align-items: center; /* Align items vertically centered */
+  }
+
+  .hero-section-link a {
+    background-color: #4caf50; /* Green background for items */
+    text-align: center;
+    color: white; /* White text color */
+    padding: 3%; /* Padding inside each item */
+    border-radius: 10%; /* Rounded corners */
+    flex: 1; /* Allow items to grow and fill space equally */
+    margin: 3% 2% 1% 2%; /* Add margin for spacing between items */
+  }
+
+  #apply-now {
+    background-color: #ffd11a;
+    color: black;
+  }
+
+  .college-motive {
+    background-color: #052346;
+    width: 100%;
+    height: 75%;
+  }
+
+  .college-motive h1 {
+    color: #0056a6;
+    text-align: justify;
+    padding-left: 6%;
+    padding-top: 10%;
+  }
+
+  .college-motive p {
+    padding: 5% 5% 15% 5%;
+    margin-bottom: 5%;
+    color: white;
+    text-align: justify;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+    padding: 4% 4% 0% 4%;
+  }
+
+  .grid-item {
+    position: relative;
+    height: 15.625rem; /* Adjust the height as needed = 250px */
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .counter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: -1.15rem;
+    font-family: "Oswald", sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  .text-overlay {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 3%;
+    text-align: left;
+    font-family: "Oswald", sans-serif;
+  }
+
+  .slider-heading h1 {
+    background-color: #004494;
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 0%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 200%;
+    padding: 2rem;
+  }
+
+  .slider-heading p {
+    margin: 0rem 0rem -10rem 0rem;
+    background-color: #004494;
+    text-align: center;
+    font-family: "Lora", serif; /* Paragraph font */
+  }
+
+  .slider-container {
+    background-color: #004494;
+    min-height: 40rem;
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    z-index: -1;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%; /* Full width for responsiveness */
+    height: 26.5rem; /* Fixed height for the slider */
+    overflow: hidden; /* Hide overflow content */
+    margin: 0rem 0rem -10rem 0rem;
+    z-index: 2;
+  }
+
+  .item {
+    position: absolute;
+    width: 50%; /* Width of each item */
+    height: 80%; /* Full height of the slider */
+    border-radius: 5%; /* Rounded corners */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* Semi-transparent white for readability */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transitions */
+    background-size: cover; /* Cover the entire item */
+    background-position: center; /* Center the image */
+    top: 0rem; /* Align to the top */
+    left: calc(
+      50% - 25%
+    ); /* Center item horizontally (50% - half of its width) */
+  }
+
+  .item h1 {
+    text-align: center;
+  }
+
+  #next,
+  #prev {
+    position: absolute;
+    top: 40%;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    left: 10px;
+    border: black solid 0.2rem;
+    border-radius: 55px;
+  }
+  #next {
+    left: unset;
+    right: 10px;
+  }
+
+  #view-faculties-link {
+    text-align: center;
+    margin-top: -4rem;
+  }
+
+  #view-faculties-link a {
+    display: inline-block; /* Change to inline-block to respect width */
+    color: black;
+    background-color: #ffd11a;
+    padding: 0.9rem;
+    border-radius: 1rem;
+    width: 32%; /* Set a fixed width */
+  }
+
+  .campus-news-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .campus-news h1 {
+    margin-top: 3rem;
+  }
+  .campus-news h1,
+  p {
+    text-align: center;
+  }
+
+  .news-post-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%; /* Space between news items */
+    width: auto;
+    padding: 0.2rem;
+    background-color: black;
+  }
+
+  .news-item h2 {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: -1%;
+  }
+
+  .news-item-a {
+    margin-left: auto;
+    background-color: #0056a6; /* Original background color */
+    padding: 0.5rem;
+    color: white; /* Changed to white for better contrast */
+    text-decoration: none;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease,
+      box-shadow 0.3s ease; /* Smooth transitions */
+  }
+
+  .news-item-a:hover {
+    text-decoration: none;
+    background-color: #004494; /* Darker shade on hover */
+    color: #ffd700; /* Change text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  }
+
+  .news-item p {
+    padding-left: 0.5rem;
+    text-align: left;
+  }
+
+  .news-image {
+    width: 100%; /* Make images responsive */
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 20px; /* Optional: rounded corners */
+  }
+
+  #more-news-button {
+    background-color: #ffd700;
+    width: 30%;
+    padding: 1rem;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .student-feedback-section {
+    background-color: #4a90e2;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Keep this as is since it's a viewport height */
+  }
+
+  .student-feedback-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
+    width: 18.75rem; /* 300px */
+  }
+
+  .student-feedback-header {
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-description {
+    font-size: 0.875rem; /* 14px */
+    color: #333;
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .student-feedback-testimonial {
+    background-color: #f9f9f9;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
+    opacity: 0; /* Start as invisible */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  }
+
+  .student-feedback-testimonial.visible {
+    opacity: 1; /* Fully visible when this class is added */
+  }
+
+  .stars {
+    color: #ffd700;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-testimonial-text {
+    font-size: 0.875rem; /* 14px */
+    color: #333;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-testimonial-name {
+    font-weight: bold;
+    margin-bottom: 0.3125rem; /* 5px */
+  }
+
+  .student-feedback-testimonial-designation {
+    font-size: 0.75rem; /* 12px */
+    color: #777;
+  }
+
+  .testimonial-image {
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
+    border-radius: 50%;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .student-feedback-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .student-feedback-button {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .student-feedback-button i {
+    color: #4a90e2;
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .upcoming-events {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .events-div h1,
+  .events-div p,
+  .events-div a {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
+  .event-grid {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of boxes */
+    justify-content: center; /* Center the boxes */
+    gap: 1.25rem; /* Add space between boxes */
+  }
+
+  .event-item {
+    background-color: #004494; /* Light background for the boxes */
+    border-radius: 0.625rem; /* Rounded corners */
+    padding: 0.625rem; /* Padding inside the box */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 90%;
+  }
+
+  .events-div {
+    text-align: center; /* Center text for all child elements */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-div h6 {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Change to center for consistency */
+    color: white;
+    background-color: black;
+    margin-bottom: -4.84rem;
+    margin-left: 1.97rem;
+    padding: 2rem;
+    width: fit-content; /* Keeps width based on content */
+    border-radius: 0rem 0rem 10rem 10rem;
+  }
+
+  .events-div img {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    border-radius: 2rem;
+  }
+
+  .event-grid a {
+    background-color: #ffd700;
+    padding: 0.5rem;
+  }
+
+  .events-div p {
+    color: white;
+    background-color: #004494;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+
+  .events-div h1 {
+    background-color: #004494;
+    text-align: left;
+    padding: 0.7rem 0rem 0.7rem 0rem;
+  }
+
+  .view-all-event-button {
+    text-align: center;
+  }
+
+  .view-all-event-button button {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ffd700;
+    border-radius: 10px;
+  }
+
+  .alumni-section {
+    background-color: #4a6cf7;
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .alumni-header {
+    text-align: left;
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .alumni-header span {
+    display: inline-block;
+    position: relative;
+    padding-top: 4rem; /* Space between text and line */
+    font-size: 1.125rem; /* 18px */
+    font-weight: normal;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+  .custom-overline-alumni::before {
+    content: "";
+    position: absolute;
+    left: 0rem; /* Increase length on left side */
+    right: 5rem; /* Increase length on right side */
+    top: 3.2rem; /* Adjust this for vertical spacing */
+    height: 3px; /* Thickness of the line */
+    background-color: #ffd700; /* Color of the line */
+  }
+
+  .alumni-header h1 {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .alumni-header p {
+    margin-left: 1rem;
+    text-align: left;
+  }
+
+  .alumni-card {
+    background-color: #fff;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 18.75rem; /* 300px */
+    text-align: center;
+    margin-bottom: 1.25rem; /* 20px */
+    transition: transform 0.5s ease; /* Smooth transition */
+  }
+  .alumni-card img {
+    width: 100%;
+    border-top-left-radius: 0.625rem; /* 10px */
+    border-top-right-radius: 0.625rem; /* 10px */
+  }
+  .alumni-card h3 {
+    text-align: left;
+    font-size: 1.5rem; /* 24px */
+    margin: 0.625rem 0; /* 10px */
+    margin-left: 1rem;
+  }
+  .alumni-card p {
+    font-size: 0.875rem; /* 14px */
+    color: #555;
+    text-align: left;
+    margin-left: 1rem;
+  }
+  .alumni-card button {
+    background-color: #fff;
+    border: 0.125rem solid #000; /* 2px */
+    border-radius: 1.25rem; /* 20px */
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.625rem; /* 10px */
+    margin-bottom: 1rem;
+  }
+  .alumni-card button:hover {
+    background-color: #f0f0f0;
+  }
+  .alumni-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem; /* 20px */
+  }
+  .alumni-navigation button {
+    background-color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  .faculty-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.25rem; /* 20px */
+  }
+
+  .faculty-container h1 {
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .view-all {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .view-all i {
+    margin-right: 0.3125rem; /* 5px */
+    margin-bottom: 1rem;
+  }
+
+  .faculty-card {
+    display: grid;
+    place-items: center;
+    background-color: #4a5eff;
+    padding: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
+    border-radius: 0.3125rem; /* 5px */
+    width: auto;
+    text-align: center;
+  }
+
+  .faculty-card img {
+    width: 6.25rem; /* 100px */
+    height: 6.25rem; /* 100px */
+    border-radius: 50%;
+    margin-bottom: 0.625rem; /* 10px */
+  }
+
+  .faculty-name {
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    color: #000;
+  }
+
+  .faculty-department {
+    font-size: 0.875rem; /* 14px */
+    color: #000;
+  }
+
+  .social-icons ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+  }
+
+  .social-icons li {
+    display: inline; /* Display items in a line */
+    margin: 0 10px; /* Space between icons */
+  }
+
+  .social-icons a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Icon color */
+    font-size: 24px; /* Icon size */
+  }
+
+  .social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+
+  .slideshow-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Four columns */
+    gap: 10px; /* Space between grid items */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .image-box {
+    position: relative;
+    width: auto; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10%;
+  }
+
+  .image-slides {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+    width: 100%; /* Full width for sliding effect */
+  }
+
+  .image-slide {
+    min-width: 100%; /* Each slide takes full container width */
+    height: 100%; /* Full height */
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove bottom space */
+  }
 }
