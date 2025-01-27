@@ -1,3 +1,30 @@
+// ***** code that will close the menu when user clicks outside the menu *****
+// Select elements
+const menuToggle = document.querySelector(".menu-toggle");
+const navList = document.querySelector(".nav-list");
+
+// Toggle menu on click
+menuToggle.addEventListener("click", function () {
+  navList.classList.toggle("active");
+
+  // Update aria-expanded attribute
+  const isExpanded = navList.classList.contains("active");
+  this.setAttribute("aria-expanded", isExpanded);
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+  // Check if the clicked element is not the menu toggle or inside the nav list
+  if (!menuToggle.contains(event.target) && !navList.contains(event.target)) {
+    // Close the menu if it's open
+    if (navList.classList.contains("active")) {
+      navList.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+});
+// ***** code that will close the menu when user clicks outside the menu *****
+
 // ***** Code Counting animation starts from here *****
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".animatedCounter");
@@ -172,6 +199,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p>${item.content}</p>
                 </a>
             </div>
+
+             <div class="news-post-div-computer">
+                <a class="news-item-a" href="${item.link}">
+                    <img src="${item.image}" alt="${
+        item.title
+      }" class="news-image"};">
+                    <h2>${item.title}</h2>
+                    <p>${item.content}</p>
+                </a>
+            </div>
         `;
 
       newsGrid.appendChild(newsItemDiv);
@@ -185,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // ***** code for campus news grid ends here *****
 
-  // *****Carousel for student feedback starts from here*****
+  // *****Carousel for student feedback starts from here (It is for mobile layout)*****
   // Testimonial data array
   const testimonials = [
     {
@@ -253,7 +290,119 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize the first testimonial on page load
   updateTestimonial();
-  // *****code for student feedback slide ends here.*****
+  // *****code for student feedback slide ends here.(It is for mobile layout)*****
+
+  // *****Carousel for student feedback starts from here (It is for computer layout)*****
+  const feedbackInfo = [
+    {
+      paragraph:
+        "Your opinion matters, and by providing feedback, you contribute to the continuous enhancement of our academic programs, support services, and campus life.",
+      imageSrc:
+        "https://storage.googleapis.com/a1aa/image/bLeB1eV8Ckv3eoK4ZF8jIvv80cVfQr3NSntV5Tl8Ogm0vshPB.jpg",
+      authorName: "Emma Elizabeth",
+      authorTitle: "Assistant Teacher",
+    },
+    {
+      paragraph:
+        "I can't recommend The Gourmet Haven enough. It's a place for special date nights or whenever you're in the mood for a culinary adventure.",
+      imageSrc:
+        "https://storage.googleapis.com/a1aa/image/bLeB1eV8Ckv3eoK4ZF8jIvv80cVfQr3NSntV5Tl8Ogm0vshPB.jpg",
+      authorName: "John Doe",
+      authorTitle: "Senior Student",
+    },
+    {
+      paragraph:
+        "Your opinion matters, and by providing feedback, you contribute to the continuous enhancement of our academic programs, support services, and campus life.",
+      imageSrc:
+        "https://storage.googleapis.com/a1aa/image/bLeB1eV8Ckv3eoK4ZF8jIvv80cVfQr3NSntV5Tl8Ogm0vshPB.jpg",
+      authorName: "Emma Elizabeth",
+      authorTitle: "Assistant Teacher",
+    },
+    {
+      paragraph:
+        "I can't recommend The Gourmet Haven enough. It's a place for special date nights or whenever you're in the mood for a culinary adventure.",
+      imageSrc:
+        "https://storage.googleapis.com/a1aa/image/bLeB1eV8Ckv3eoK4ZF8jIvv80cVfQr3NSntV5Tl8Ogm0vshPB.jpg",
+      authorName: "John Doe",
+      authorTitle: "Senior Student",
+    },
+    // Add more feedback objects as needed
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const feedbackContainer = document.getElementById(
+      "computer-feedback-container"
+    );
+
+    function createFeedbackCard(feedback) {
+      const card = document.createElement("div");
+      card.classList.add("computer-feedback-card");
+      card.innerHTML = `
+        <p>${feedback.paragraph}</p>
+        <div class="author">
+            <img alt="Profile picture of ${feedback.authorName}" src="${feedback.imageSrc}" />
+            <div>
+                <div class="name">${feedback.authorName}</div>
+                <div class="title">${feedback.authorTitle}</div>
+            </div>
+        </div>
+        <div class="quote">
+            <i class="fas fa-quote-right"></i>
+        </div>`;
+      return card;
+    }
+
+    feedbackInfo.forEach((feedback) => {
+      const card = createFeedbackCard(feedback);
+      feedbackContainer.appendChild(card);
+    });
+
+    let currentIndex = 0;
+    const cards = document.querySelectorAll(".computer-feedback-card");
+
+    function showFeedback(index) {
+      cards.forEach((card, i) => {
+        card.style.display = "none"; // Hide all cards initially
+        card.style.transform = "translateX(100%)"; // Reset position off-screen
+        card.style.transition = "transform 0.5s ease"; // Add transition for smooth effect
+      });
+
+      if (index < cards.length) {
+        cards[index].style.display = "block"; // Show current card
+        requestAnimationFrame(() => {
+          cards[index].style.transform = "translateX(0)"; // Slide into view
+        });
+      }
+
+      if (index + 1 < cards.length) {
+        cards[index + 1].style.display = "block"; // Show next card
+        requestAnimationFrame(() => {
+          cards[index + 1].style.transform = "translateX(0)"; // Slide into view
+        });
+      }
+    }
+
+    function navigate(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = Math.max(0, cards.length - 2);
+      }
+      if (currentIndex >= cards.length) {
+        currentIndex = 0;
+      }
+      showFeedback(currentIndex);
+    }
+
+    document
+      .querySelector("#left-arrow-student-feedback")
+      .addEventListener("click", () => navigate(-1));
+    document
+      .querySelector("#right-arrow-student-feedback")
+      .addEventListener("click", () => navigate(1));
+
+    showFeedback(currentIndex);
+  });
+  // *****code for student feedback slide ends here.(It is for computer layout)*****
 
   // *****code for show latest three events and storing the in an array starts from here*****
   // Events rendering logic
@@ -292,13 +441,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const events = newEvents[i];
       const eventItemDiv = document.createElement("div");
       eventItemDiv.className = "event-item";
-      eventItemDiv.innerHTML = `<div class="events-div">
-                 <h6>${events.date}</h6>
-                 <img src="${events.image}" alt="${events.title}">
-                 <h1>${events.title}</h1>
-                 <p>${events.description}</p>
-                 <a href="${events.link}">Learn More</a>
-             </div>`;
+      eventItemDiv.innerHTML = `
+      <div class="events-div">
+      <a class="computer-events-layout-wrap-a-link" href="https://www.example.com/">
+  <h6>${events.date}</h6>
+  <img src="${events.image}" alt="${events.title}">
+  <h1>${events.title}</h1>
+  <p>${events.description}</p>
+  <a id="event-learn-more" href="${events.link}">Learn More</a>
+  </a>
+</div>`;
       eventGrid.appendChild(eventItemDiv);
     }
   }

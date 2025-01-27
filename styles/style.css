@@ -1,5 +1,9 @@
 /* style.css */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0px;
   font-family: "Lora", serif; /* Default body font */
@@ -36,13 +40,115 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   /* This is the responsive design media quire for mobile devices with max-width of 480px*/
+
+  /* elements that are disable for the mobile layout starts from here */
+  .computer-feedback-section,
+  .news-post-div-computer,
+  .computer-layout-logo,
+  .college-motive-image,
+  .on-video-button-computer,
+  .a-blank-space-on-the-video {
+    display: none;
+  }
+  /* elements that are disable for the mobile layout ends here */
+
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0rem;
+    position: relative; /* Set position relative for absolute positioning of nav-list */
+  }
+
+  .logo {
+    flex: 1;
+    color: white; /* Style your logo */
+    font-size: 1.5rem; /* Adjust size as needed */
+  }
+
+  .menu-right-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: none; /* Hide by default */
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+    position: absolute; /* Position absolutely */
+    top: 100%; /* Position below the navbar */
+    right: 0; /* Align to the left */
+    background-color: brown; /* Match background color */
+    width: auto; /* Use auto width to prevent extra space */
+    margin: 0; /* Remove margin to prevent extra space */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  .nav-list.active {
+    display: block; /* Show when active */
+  }
+
+  .nav-list li {
+    margin: 0; /* Remove margin to prevent extra space */
+  }
+
+  .nav-list a {
+    display: block; /* Make links block level for easier clicking */
+    padding: 0.5rem 1rem; /* Add padding for better click area */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+  }
+
+  /* Transition for smooth opening/closing */
+  .nav-list {
+    transition: max-height 0.3s ease-out;
+  }
+
+  #globe-icon,
+  #magnifying-glass,
+  #ham-menu-bars {
+    color: white;
+    cursor: pointer;
+    font-size: 24px; /* Increase icon size */
+    padding: 0rem 1.5rem 0rem 1.5rem;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .show {
+    display: block;
+  }
+
   header {
     color: white;
-    background-color: maroon;
+    background-color: brown;
   }
 
   .hero-section {
-    background-color: #052346;
+    background-color: brown;
     display: flex; /* Use flexbox for centering */
     flex-direction: column;
     justify-content: center; /* Center horizontally */
@@ -68,7 +174,7 @@ a:hover {
     color: white;
     padding: 3%;
     border-radius: 8%;
-    background-color: #0056a6;
+    background-color: black;
   }
 
   .hero-section-link {
@@ -78,7 +184,7 @@ a:hover {
   }
 
   .hero-section-link a {
-    background-color: #4caf50; /* Green background for items */
+    background-color: black; /* Green background for items */
     text-align: center;
     color: white; /* White text color */
     padding: 3%; /* Padding inside each item */
@@ -88,38 +194,43 @@ a:hover {
   }
 
   #apply-now {
-    background-color: #ffd11a;
+    background-color: grey;
     color: black;
   }
 
-  .college-motive {
-    background-color: #052346;
+  .college-motive-container {
+    background-color: brown;
     width: 100%;
     height: 75%;
   }
 
-  .college-motive h1 {
-    color: #0056a6;
+  .college-motive-heading h1 {
+    color: black;
     text-align: justify;
     padding-left: 6%;
     padding-top: 10%;
   }
 
-  .college-motive p {
+  .college-motive-paragraph p {
     padding: 5% 5% 15% 5%;
     margin-bottom: 5%;
     color: white;
     text-align: justify;
   }
 
-  .grid-container {
+  .faculty-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3%;
     padding: 4% 4% 0% 4%;
   }
 
-  .grid-item {
+  .faculty-grid-item-6,
+  .faculty-grid-item-5,
+  .faculty-grid-item-4,
+  .faculty-grid-item-3,
+  .faculty-grid-item-2,
+  .faculty-grid-item-1 {
     position: relative;
     height: 15.625rem; /* Adjust the height as needed = 250px */
     background-size: cover;
@@ -146,7 +257,6 @@ a:hover {
   }
 
   .slider-heading h1 {
-    background-color: #004494;
     text-align: center;
     margin-top: 20%;
     margin-bottom: 0%;
@@ -158,13 +268,13 @@ a:hover {
 
   .slider-heading p {
     margin: 0rem 0rem -10rem 0rem;
-    background-color: #004494;
+
     text-align: center;
     font-family: "Lora", serif; /* Paragraph font */
   }
 
   .slider-container {
-    background-color: #004494;
+    background-color: brown;
     min-height: 40rem;
     margin-top: 0%;
     display: flex;
@@ -233,8 +343,8 @@ a:hover {
 
   #view-faculties-link a {
     display: inline-block; /* Change to inline-block to respect width */
-    color: black;
-    background-color: #ffd11a;
+    color: white;
+    background-color: black;
     padding: 0.9rem;
     border-radius: 1rem;
     width: 32%; /* Set a fixed width */
@@ -243,6 +353,12 @@ a:hover {
   .campus-news-section {
     display: flex;
     flex-direction: column;
+  }
+
+  .campus-news-button-container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
   }
 
   .campus-news h1 {
@@ -270,7 +386,7 @@ a:hover {
 
   .news-item-a {
     margin-left: auto;
-    background-color: #0056a6; /* Original background color */
+    background-color: brown; /* Original background color */
     padding: 0.5rem;
     color: white; /* Changed to white for better contrast */
     text-decoration: none;
@@ -298,17 +414,18 @@ a:hover {
   }
 
   #more-news-button {
-    background-color: #ffd700;
-    width: 30%;
+    background-color: black;
+    width: 20%;
     padding: 1rem;
     border-radius: 10px;
-    align-self: center;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    color: white;
   }
 
   .student-feedback-section {
-    background-color: #4a90e2;
+    background-color: brown;
     color: #000;
     display: flex;
     justify-content: center;
@@ -351,7 +468,7 @@ a:hover {
   }
 
   .stars {
-    color: #ffd700;
+    color: black;
     margin-bottom: 0.625rem; /* 10px */
   }
 
@@ -384,7 +501,7 @@ a:hover {
   }
 
   .student-feedback-button {
-    background-color: #ffd700;
+    background-color: black;
     border: none;
     border-radius: 50%;
     width: 2.5rem; /* 40px */
@@ -396,7 +513,7 @@ a:hover {
   }
 
   .student-feedback-button i {
-    color: #4a90e2;
+    color: white;
     font-size: 1.25rem; /* 20px */
   }
 
@@ -420,7 +537,7 @@ a:hover {
   }
 
   .event-item {
-    background-color: #004494; /* Light background for the boxes */
+    background-color: brown; /* Light background for the boxes */
     border-radius: 0.625rem; /* Rounded corners */
     padding: 0.625rem; /* Padding inside the box */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -454,22 +571,29 @@ a:hover {
     border-radius: 2rem;
   }
 
-  .event-grid a {
-    background-color: #ffd700;
+  #event-learn-more {
+    background-color: black;
     padding: 0.5rem;
+    color: white;
   }
 
   .events-div p {
     color: white;
-    background-color: #004494;
+    background-color: brown;
     text-align: left;
     padding-bottom: 1rem;
   }
 
   .events-div h1 {
-    background-color: #004494;
+    background-color: brown;
     text-align: left;
     padding: 0.7rem 0rem 0.7rem 0rem;
+    color: black;
+    text-decoration: none;
+  }
+
+  .events-div h1:hover {
+    text-decoration: none;
   }
 
   .view-all-event-button {
@@ -480,12 +604,14 @@ a:hover {
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding: 1rem;
-    background-color: #ffd700;
+    background-color: black;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
   }
 
   .alumni-section {
-    background-color: #4a6cf7;
+    background-color: brown;
     font-family: Arial, sans-serif;
     color: #000;
     margin: 0;
@@ -516,7 +642,7 @@ a:hover {
     right: 5rem; /* Increase length on right side */
     top: 3.2rem; /* Adjust this for vertical spacing */
     height: 3px; /* Thickness of the line */
-    background-color: #ffd700; /* Color of the line */
+    background-color: black; /* Color of the line */
   }
 
   .alumni-header h1 {
@@ -576,7 +702,7 @@ a:hover {
     gap: 1.25rem; /* 20px */
   }
   .alumni-navigation button {
-    background-color: #ffd700;
+    background-color: black;
     border: none;
     border-radius: 50%;
     width: 3.125rem; /* 50px */
@@ -584,6 +710,7 @@ a:hover {
     font-size: 1.5rem; /* 24px */
     cursor: pointer;
     margin-bottom: 1rem;
+    color: white;
   }
   .faculty-container {
     width: 80%;
@@ -608,7 +735,7 @@ a:hover {
   .faculty-card {
     display: grid;
     place-items: center;
-    background-color: #4a5eff;
+    background-color: brown;
     padding: 0.625rem; /* 10px */
     margin-bottom: 1.25rem; /* 20px */
     border-radius: 0.3125rem; /* 5px */
@@ -669,7 +796,7 @@ a:hover {
     width: auto; /* Adjust as needed */
     height: auto; /* Adjust as needed */
     overflow: hidden;
-    border-radius: 10%;
+    border-radius: 30px;
   }
 
   .image-slides {
@@ -687,27 +814,180 @@ a:hover {
     width: 100%;
     height: auto;
     display: block; /* Remove bottom space */
+  }
+
+  .space-under-social-section {
+    padding: 1rem;
+  }
+
+  .email-icon-footer,
+  .phone-number-footer,
+  .location-dot-footer {
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    padding: 0.9rem;
+    border-radius: 50%;
+    margin: 0.4rem 0.4rem 0.4rem 1rem;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+  }
+
+  .location-dot-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .phone-number-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .email-icon-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .footer-link-icon {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-link-icon:hover {
+    color: yellow;
+    text-decoration: none;
+  }
+
+  .copyright-footer-mark {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0%;
+    margin-top: 1rem;
+    background-color: darkred;
+    padding: 1rem;
+  }
+
+  .footer-privacy-policy-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.6rem;
+  }
+
+  .footer-privacy-policy-links a {
+    color: white;
+  }
+
+  .footer-privacy-policy-links a:hover {
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    transform: scale(1.2); /* Scale up on hover */
   }
 }
 
+/************************************************************************************************************************************************************************************************************/
+
 @media screen and (min-width: 769px) {
-  header {
-    color: white;
-    background-color: maroon;
+  /* mobile elements that are disabled in computer layout starts from here */
+  #mobile-on-video-button,
+  #apply-now {
+    display: none;
+  }
+  .student-feedback-section,
+  .news-post-div,
+  .hero-section-link a,
+  .navbar-mobile {
+    display: none;
+  }
+  /* mobile elements that are disabled in computer layout ends here */
+
+  .computer-layout-logo {
+    font-size: 2rem;
+    margin-bottom: -4rem;
+    margin-left: 2rem;
+    z-index: 1;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    padding: 0.85rem 3rem;
+    margin-bottom: 0;
+    position: relative; /* Set position relative for absolute positioning of nav-list */
+  }
+
+  .menu-right-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: none; /* Hide by default */
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+    position: absolute; /* Position absolutely */
+    top: 100%; /* Position below the navbar */
+    right: 0; /* Align to the left */
+    background-color: brown; /* Match background color */
+    width: auto; /* Use auto width to prevent extra space */
+    margin: 0; /* Remove margin to prevent extra space */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  .nav-list.active {
+    display: block; /* Show when active */
+  }
+
+  .nav-list li {
+    margin: 0; /* Remove margin to prevent extra space */
+  }
+
+  .nav-list a {
+    display: block; /* Make links block level for easier clicking */
+    padding: 0.5rem 1rem; /* Add padding for better click area */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+  }
+
+  /* Transition for smooth opening/closing */
+  .nav-list {
+    transition: max-height 0.3s ease-out;
+  }
+
+  #globe-icon,
+  #magnifying-glass,
+  #ham-menu-bars {
+    color: black;
+    cursor: pointer;
+    font-size: 24px; /* Increase icon size */
+    padding: 0rem 0.8rem 0rem 0.8rem;
   }
 
   .hero-section {
-    background-color: #052346;
+    background-color: brown;
     display: flex; /* Use flexbox for centering */
     flex-direction: column;
     justify-content: center; /* Center horizontally */
-    padding: 5% 2%; /* Leave space on both sides */
+    padding: 1% 1%; /* Leave space on both sides */
     margin: 0;
   }
 
   video {
     max-width: 100%; /* Allow width to adjust automatically */
     height: 25%; /* Set height to 60% of the viewport height */
+    border-radius: 20px;
+  }
+
+  .on-video-button-computer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    font-weight: bold;
     border-radius: 10px;
   }
 
@@ -715,31 +995,68 @@ a:hover {
     display: flex;
     flex-direction: row;
     background-color: transparent;
-    gap: 5%;
+    gap: 20%;
     margin: -16% 0% 9% 3%;
   }
 
-  .on-video-link a {
+  .a-blank-space-on-the-video {
+    position: relative;
+    z-index: 50;
+    color: black;
+    width: 60%;
+    margin-left: 24%;
+    margin-top: -42%;
+    margin-bottom: 44%;
+    border: 0.6rem solid brown;
+    border-radius: 1rem 0rem 1rem 1rem;
+  }
+
+  .a-blank-space-on-the-video a {
+    background-color: black;
     color: white;
-    padding: 3%;
-    border-radius: 8%;
-    background-color: #0056a6;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth scaling */
   }
 
-  .hero-section-link {
-    display: flex; /* Enable flexbox */
-    justify-content: space-between; /* Distribute space evenly between items */
-    align-items: center; /* Align items vertically centered */
+  .a-blank-space-on-the-video a:hover {
+    transform: scale(1.2); /* Scale up to 120% on hover */
+    text-decoration: none;
   }
 
-  .hero-section-link a {
-    background-color: #4caf50; /* Green background for items */
-    text-align: center;
-    color: white; /* White text color */
-    padding: 3%; /* Padding inside each item */
-    border-radius: 10%; /* Rounded corners */
-    flex: 1; /* Allow items to grow and fill space equally */
-    margin: 3% 2% 1% 2%; /* Add margin for spacing between items */
+  .a-blank-space-on-the-video::before {
+    z-index: 500;
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position it relative to the container */
+
+    transform: translateX(
+      -50%
+    ); /* Offset by half its width for true centering */
+    width: 1.25rem; /* Width of the curve */
+    height: 1.5rem; /* Height of the curve */
+    background-color: transparent; /* Same as container background */
+    right: -1.15rem; /* Adjust as needed */
+    bottom: -32%; /* Adjust as needed */
+    border-bottom-left-radius: 1.35rem; /* Converted */
+    border-top-right-radius: 1.35rem; /* Changed to positive value */
+    box-shadow: 0.5rem -0.5rem 0.125rem 0.4375rem brown; /* Adjusted for visibility */
+  }
+
+  .a-blank-space-on-the-video::after {
+    z-index: 500;
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position it relative to the container */
+    transform: translateX(
+      -50%
+    ); /* Offset by half its width for true centering */
+    width: 1.25rem; /* Width of the curve */
+    height: 1.5rem; /* Height of the curve */
+    background-color: transparent; /* Same as container background */
+    left: -1.2rem; /* Adjust as needed */
+    top: -7.5%; /* Adjust as needed */
+    border-top-right-radius: 1.25rem; /* Converted */
+    border-bottom-left-radius: 1.25rem; /* Changed to positive value */
+    box-shadow: 0.5rem -0.5rem 0.125rem 0.4375rem brown; /* Adjusted for visibility */
   }
 
   #apply-now {
@@ -747,40 +1064,118 @@ a:hover {
     color: black;
   }
 
-  .college-motive {
-    background-color: #052346;
-    width: 100%;
-    height: 75%;
-  }
-
-  .college-motive h1 {
-    color: #0056a6;
-    text-align: justify;
-    padding-left: 6%;
-    padding-top: 10%;
-  }
-
-  .college-motive p {
-    padding: 5% 5% 15% 5%;
-    margin-bottom: 5%;
-    color: white;
-    text-align: justify;
-  }
-
-  .grid-container {
+  .college-motive-container {
+    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3%;
-    padding: 4% 4% 0% 4%;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 
-  .grid-item {
-    position: relative;
-    height: 15.625rem; /* Adjust the height as needed = 250px */
+  .college-motive-heading h1 {
+    font-size: 3rem;
+  }
+
+  .college-motive-paragraph p {
+    font-size: 1.4rem;
+    text-align: justify;
+  }
+
+  .college-motive-heading {
+    grid-area: 1/1/1/6;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .college-motive-paragraph {
+    padding: 0.5rem;
+    grid-area: 2/1/5/6;
+  }
+
+  .college-motive-image {
+    grid-area: 1/6/5/10;
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .college-motive-items {
+    background-color: brown;
+    max-width: 100%; /* Maximum width */
+  }
+
+  .college-motive-container img {
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 3rem;
+  }
+
+  .faculty-grid-container {
+    display: grid;
+    grid-template-rows: repeat(4, 8rem);
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    padding: 4.3rem;
+  }
+
+  .faculty-grid-item-1,
+  .faculty-grid-item-2,
+  .faculty-grid-item-3,
+  .faculty-grid-item-4,
+  .faculty-grid-item-5,
+  .faculty-grid-item-6 {
+    position: relative; /* Needed for absolute positioning of overlays */
+    height: auto; /* Set a fixed height or use min-height */
     background-size: cover;
     background-position: center;
-    border-radius: 0.5rem;
-    overflow: hidden;
+  }
+
+  /* Hover effect */
+  .faculty-grid-item-1:hover,
+  .faculty-grid-item-2:hover,
+  .faculty-grid-item-3:hover,
+  .faculty-grid-item-4:hover,
+  .faculty-grid-item-5:hover,
+  .faculty-grid-item-6:hover {
+    transform: scale(1.06); /* Slightly enlarge the item */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
+    transition: transform 0.5s ease; /* Smooth transition */
+    border: 5px brown solid;
+  }
+
+  .faculty-grid-item-1 {
+    grid-column: span 2;
+    grid-row: span 4;
+    border-radius: 20px;
+  }
+
+  .faculty-grid-item-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+    border-radius: 20px;
+  }
+
+  .faculty-grid-item-3 {
+    grid-column: span 4;
+    grid-row: span 2;
+    border-radius: 20px;
+  }
+
+  .faculty-grid-item-4 {
+    grid-column: span 2;
+    grid-row: span 2;
+    border-radius: 20px;
+  }
+
+  .faculty-grid-item-5 {
+    grid-column: span 4;
+    grid-row: span 2;
+    border-radius: 20px;
+  }
+
+  .faculty-grid-item-6 {
+    grid-column: span 4;
+    grid-row: span 2;
+    border-radius: 20px;
   }
 
   .counter {
@@ -801,25 +1196,24 @@ a:hover {
   }
 
   .slider-heading h1 {
-    background-color: #004494;
+    background-color: brown;
     text-align: center;
-    margin-top: 20%;
     margin-bottom: 0%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    font-size: 200%;
+    font-size: 3.2rem;
     padding: 2rem;
   }
 
   .slider-heading p {
-    margin: 0rem 0rem -10rem 0rem;
-    background-color: #004494;
+    margin: -2rem 0rem -9rem 0rem;
+    background-color: brown;
     text-align: center;
     font-family: "Lora", serif; /* Paragraph font */
   }
 
   .slider-container {
-    background-color: #004494;
+    background-color: brown;
     min-height: 40rem;
     margin-top: 0%;
     display: flex;
@@ -832,7 +1226,7 @@ a:hover {
   .slider {
     position: relative;
     width: 100%; /* Full width for responsiveness */
-    height: 26.5rem; /* Fixed height for the slider */
+    height: 27rem; /* Fixed height for the slider */
     overflow: hidden; /* Hide overflow content */
     margin: 0rem 0rem -10rem 0rem;
     z-index: 2;
@@ -840,8 +1234,8 @@ a:hover {
 
   .item {
     position: absolute;
-    width: 50%; /* Width of each item */
-    height: 80%; /* Full height of the slider */
+    width: 20%; /* Width of each item */
+    height: 100%; /* Full height of the slider */
     border-radius: 5%; /* Rounded corners */
     background-color: rgba(
       255,
@@ -854,7 +1248,7 @@ a:hover {
     background-position: center; /* Center the image */
     top: 0rem; /* Align to the top */
     left: calc(
-      50% - 25%
+      50% - 10%
     ); /* Center item horizontally (50% - half of its width) */
   }
 
@@ -875,6 +1269,7 @@ a:hover {
     left: 10px;
     border: black solid 0.2rem;
     border-radius: 55px;
+    cursor: pointer;
   }
   #next {
     left: unset;
@@ -883,32 +1278,63 @@ a:hover {
 
   #view-faculties-link {
     text-align: center;
-    margin-top: -4rem;
+    margin-top: 2rem;
   }
 
   #view-faculties-link a {
     display: inline-block; /* Change to inline-block to respect width */
     color: black;
-    background-color: #ffd11a;
+    background-color: #ffd700;
     padding: 0.9rem;
     border-radius: 1rem;
-    width: 32%; /* Set a fixed width */
+    width: 20%; /* Set a fixed width */
+    margin-bottom: 3rem;
+    border: 3px solid black;
   }
 
-  .campus-news-section {
+  #view-faculties-link a:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #ffd700;
+    transform: scale(1.06); /* Slightly enlarge the item */
+    transition: transform 0.5s ease; /* Smooth transition */
+  }
+
+  .news-section-to-center-in-computer {
+    width: 90%;
+    height: auto;
+    background-color: white; /* Box background color */
+    padding: 1rem; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    margin: 0 auto;
+  }
+
+  .news-grid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .campus-news-button-container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
   }
 
   .campus-news h1 {
-    margin-top: 3rem;
+    font-size: 2.5rem;
+    margin: 1rem 0rem 0rem 3rem;
+    text-align: left;
   }
-  .campus-news h1,
-  p {
-    text-align: center;
+  .campus-news p {
+    text-align: left;
+    margin: 0.5rem 0rem 2rem 3rem;
+    font-weight: 600;
   }
 
-  .news-post-div {
+  .news-post-div-computer {
     display: flex;
     flex-direction: column;
     margin-bottom: 1%; /* Space between news items */
@@ -921,11 +1347,12 @@ a:hover {
     font-size: 1.5rem;
     padding-left: 0.5rem;
     margin-bottom: -1%;
+    color: black;
   }
 
   .news-item-a {
     margin-left: auto;
-    background-color: #0056a6; /* Original background color */
+    background-color: brown; /* Original background color */
     padding: 0.5rem;
     color: white; /* Changed to white for better contrast */
     text-decoration: none;
@@ -952,107 +1379,109 @@ a:hover {
     border-radius: 20px; /* Optional: rounded corners */
   }
 
-  #more-news-button {
+  .campus-news-button-container a {
     background-color: #ffd700;
-    width: 30%;
+    width: 20%;
     padding: 1rem;
     border-radius: 10px;
-    align-self: center;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .student-feedback-section {
-    background-color: #4a90e2;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh; /* Keep this as is since it's a viewport height */
-  }
-
-  .student-feedback-container {
+    margin-bottom: 0.7rem;
     text-align: center;
-    background-color: #fff;
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.625rem; /* 10px */
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
-    width: 18.75rem; /* 300px */
+    color: black;
+    border: 3px solid black;
   }
 
-  .student-feedback-header {
-    font-size: 1.5rem; /* 24px */
-    font-weight: bold;
-    margin-bottom: 0.625rem; /* 10px */
+  .campus-news-button-container a:hover {
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    transform: scale(1.2); /* Scale up on hover */
+    text-decoration: none;
   }
 
-  .student-feedback-description {
-    font-size: 0.875rem; /* 14px */
-    color: #333;
-    margin-bottom: 1.25rem; /* 20px */
+  .computer-feedback-section {
+    margin: 0;
+    background-color: brown;
+    margin-top: 2rem;
   }
 
-  .student-feedback-testimonial {
-    background-color: #f9f9f9;
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.625rem; /* 10px */
-    margin-bottom: 1.25rem; /* 20px */
-    opacity: 0; /* Start as invisible */
-    transition: opacity 0.5s ease; /* Smooth transition for opacity */
-  }
-
-  .student-feedback-testimonial.visible {
-    opacity: 1; /* Fully visible when this class is added */
-  }
-
-  .stars {
-    color: #ffd700;
-    margin-bottom: 0.625rem; /* 10px */
-  }
-
-  .student-feedback-testimonial-text {
-    font-size: 0.875rem; /* 14px */
-    color: #333;
-    margin-bottom: 0.625rem; /* 10px */
-  }
-
-  .student-feedback-testimonial-name {
-    font-weight: bold;
-    margin-bottom: 0.3125rem; /* 5px */
-  }
-
-  .student-feedback-testimonial-designation {
-    font-size: 0.75rem; /* 12px */
-    color: #777;
-  }
-
-  .testimonial-image {
-    width: 3.125rem; /* 50px */
-    height: 3.125rem; /* 50px */
-    border-radius: 50%;
-    margin-bottom: 0.625rem; /* 10px */
-  }
-
-  .student-feedback-buttons {
+  .computer-feedback-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    padding: 50px;
   }
-
-  .student-feedback-button {
-    background-color: #ffd700;
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem; /* 40px */
-    height: 2.5rem; /* 40px */
+  .computer-feedback-left-section {
+    max-width: 40%;
+  }
+  .computer-feedback-left-section h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  .computer-feedback-left-section p {
+    font-size: 1.2em;
+    margin: 20px 0;
+  }
+  .computer-feedback-navigation {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 10px;
+  }
+  .computer-feedback-navigation i {
+    font-size: 1.5em;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
     cursor: pointer;
   }
+  .computer-feedback-right-section {
+    display: flex;
+    gap: 20px;
+  }
+  .computer-feedback-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hide all cards initially */
+  }
+  .computer-feedback-card.active {
+    display: block; /* Show only the active card */
+  }
+  .computer-feedback-card .stars {
+    color: #a0001c;
+  }
+  .computer-feedback-card p {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  .computer-feedback-card .author {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .computer-feedback-card .author img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .computer-feedback-card .author .name {
+    font-weight: bold;
+  }
+  .computer-feedback-card .author .title {
+    font-size: 0.9em;
+    color: gray;
+  }
+  .computer-feedback-card .quote {
+    color: #a0001c;
+    font-size: 2em;
+    text-align: right;
+  }
 
-  .student-feedback-button i {
-    color: #4a90e2;
-    font-size: 1.25rem; /* 20px */
+  .computer-events-layout-wrap-a-link {
+    display: flex;
+    flex-direction: column;
   }
 
   .upcoming-events {
@@ -1069,23 +1498,34 @@ a:hover {
 
   .event-grid {
     display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow wrapping of boxes */
+    flex-direction: row;
     justify-content: center; /* Center the boxes */
     gap: 1.25rem; /* Add space between boxes */
   }
 
   .event-item {
-    background-color: #004494; /* Light background for the boxes */
+    background-color: brown; /* Light background for the boxes */
     border-radius: 0.625rem; /* Rounded corners */
     padding: 0.625rem; /* Padding inside the box */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    width: 90%;
   }
-
   .events-div {
     text-align: center; /* Center text for all child elements */
     display: flex;
     flex-direction: column;
+  }
+  .computer-events-layout-wrap-a-link:hover {
+    background-color: brown;
+    text-decoration: none;
+  }
+
+  .event-grid a {
+    background-color: brown;
+    padding: 0.5rem;
+  }
+
+  .event-grid a:hover {
+    background-color: black;
   }
 
   .events-div h6 {
@@ -1094,11 +1534,11 @@ a:hover {
     text-align: center; /* Change to center for consistency */
     color: white;
     background-color: black;
-    margin-bottom: -4.84rem;
-    margin-left: 1.97rem;
-    padding: 2rem;
+    margin-bottom: -3.44rem;
+    margin-left: 1.7rem;
+    padding: 1.3rem;
     width: fit-content; /* Keeps width based on content */
-    border-radius: 0rem 0rem 10rem 10rem;
+    border-radius: 0rem 0rem 3rem 3rem;
   }
 
   .events-div img {
@@ -1107,22 +1547,30 @@ a:hover {
     width: 100%;
     z-index: 0;
     border-radius: 2rem;
+    margin-bottom: 1rem;
   }
 
-  .event-grid a {
-    background-color: #ffd700;
-    padding: 0.5rem;
+  #event-learn-more {
+    background-color: grey;
+    color: black;
+  }
+
+  #event-learn-more:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
   }
 
   .events-div p {
     color: white;
-    background-color: #004494;
+    background-color: brown;
     text-align: left;
     padding-bottom: 1rem;
   }
 
   .events-div h1 {
-    background-color: #004494;
+    background-color: brown;
+    color: black;
     text-align: left;
     padding: 0.7rem 0rem 0.7rem 0rem;
   }
@@ -1137,22 +1585,26 @@ a:hover {
     padding: 1rem;
     background-color: #ffd700;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   .alumni-section {
-    background-color: #4a6cf7;
+    background-color: brown;
     font-family: Arial, sans-serif;
     color: #000;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: auto;
+    height: 38rem;
   }
   .alumni-header {
-    text-align: left;
-    margin-bottom: 1.25rem; /* 20px */
+    width: 40%;
+    margin-right: 3rem;
+    margin-bottom: 19rem;
   }
 
   .alumni-header span {
@@ -1169,20 +1621,22 @@ a:hover {
     position: absolute;
     left: 0rem; /* Increase length on left side */
     right: 5rem; /* Increase length on right side */
-    top: 3.2rem; /* Adjust this for vertical spacing */
+    top: 3rem; /* Adjust this for vertical spacing */
     height: 3px; /* Thickness of the line */
     background-color: #ffd700; /* Color of the line */
   }
 
   .alumni-header h1 {
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
   .alumni-header p {
     margin-left: 1rem;
     text-align: left;
+    width: 70%;
+    text-align: justify;
   }
 
   .alumni-card {
@@ -1193,7 +1647,9 @@ a:hover {
     text-align: center;
     margin-bottom: 1.25rem; /* 20px */
     transition: transform 0.5s ease; /* Smooth transition */
+    margin-right: 8rem;
   }
+
   .alumni-card img {
     width: 100%;
     border-top-left-radius: 0.625rem; /* 10px */
@@ -1227,8 +1683,9 @@ a:hover {
   }
   .alumni-navigation {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 1.25rem; /* 20px */
+    margin-right: 4rem;
   }
   .alumni-navigation button {
     background-color: #ffd700;
@@ -1240,6 +1697,14 @@ a:hover {
     cursor: pointer;
     margin-bottom: 1rem;
   }
+
+  .faculty-card-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+    justify-content: center;
+  }
+
   .faculty-container {
     width: 80%;
     margin: 0 auto;
@@ -1263,35 +1728,43 @@ a:hover {
   .faculty-card {
     display: grid;
     place-items: center;
-    background-color: #4a5eff;
+    background-color: brown;
     padding: 0.625rem; /* 10px */
     margin-bottom: 1.25rem; /* 20px */
     border-radius: 0.3125rem; /* 5px */
-    width: auto;
+    width: 70%;
+    height: 15rem;
     text-align: center;
   }
 
   .faculty-card img {
-    width: 6.25rem; /* 100px */
-    height: 6.25rem; /* 100px */
-    border-radius: 50%;
+    width: 9.25rem; /* 100px */
+    height: 9.25rem; /* 100px */
+    border-radius: 10%;
     margin-bottom: 0.625rem; /* 10px */
   }
 
   .faculty-name {
-    font-size: 1rem; /* 16px */
+    font-size: 1.3rem; /* 16px */
     font-weight: bold;
     color: #000;
   }
 
   .faculty-department {
-    font-size: 0.875rem; /* 14px */
+    font-size: 1rem; /* 14px */
     color: #000;
+  }
+
+  .social-heading h1 {
+    font-size: 3rem;
+    margin: 0rem 0rem -1rem 2rem;
+    padding-top: 2rem;
   }
 
   .social-icons ul {
     list-style-type: none; /* Remove bullet points */
     padding: 0;
+    margin-left: 2rem;
   }
 
   .social-icons li {
@@ -1302,7 +1775,7 @@ a:hover {
   .social-icons a {
     text-decoration: none; /* Remove underline */
     color: #000; /* Icon color */
-    font-size: 24px; /* Icon size */
+    font-size: 3rem; /* Icon size */
   }
 
   .social-icons a:hover {
@@ -1311,18 +1784,23 @@ a:hover {
 
   .slideshow-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Four columns */
-    gap: 10px; /* Space between grid items */
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+    grid-template-columns: repeat(26, 1fr); /* Adjusted for two columns */
+    grid-template-rows: repeat(1, 1fr); /* Fixed height for rows */
+    gap: 2rem; /* Space between grid items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 80%; /* Adjust width as needed */
+    margin: auto; /* Center the slideshow container */
+  }
+
+  #image-box-1 {
+    grid-area: 1 / 1 / 1 / 10; /* Positioning for box 1 */
+    height: 35rem;
   }
 
   .image-box {
     position: relative;
-    width: auto; /* Adjust as needed */
-    height: auto; /* Adjust as needed */
+    width: 100%; /* Full width of grid cell */
     overflow: hidden;
     border-radius: 10%;
   }
@@ -1330,7 +1808,8 @@ a:hover {
   .image-slides {
     display: flex;
     transition: transform 0.5s ease; /* Smooth transition */
-    width: 100%; /* Full width for sliding effect */
+    min-width: 100%; /* Full width for sliding effect */
+    height: 100%;
   }
 
   .image-slide {
@@ -1340,7 +1819,91 @@ a:hover {
 
   img {
     width: 100%;
-    height: auto;
-    display: block; /* Remove bottom space */
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .image-box-2 {
+    grid-area: 1 / 10 / 1 / 18; /* Positioning for box 2 */
+    height: 17rem;
+    margin-top: -18rem;
+  }
+
+  .image-box-3 {
+    grid-area: 1 / 10 / 1 / 18; /* Positioning for box 3 */
+    height: 17rem;
+    margin-top: 18rem;
+  }
+
+  .image-box-4 {
+    grid-area: 1/ 18 / 1 / 27; /* Positioning for box 4 */
+    height: 35rem;
+  }
+
+  .space-under-social-section {
+    padding: 1rem;
+  }
+
+  .email-icon-footer,
+  .phone-number-footer,
+  .location-dot-footer {
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    padding: 0.9rem;
+    border-radius: 50%;
+    margin: 0.4rem 0.4rem 0.4rem 1rem;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+  }
+
+  .location-dot-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .phone-number-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .email-icon-footer:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+
+  .footer-link-icon {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-link-icon:hover {
+    color: yellow;
+    text-decoration: none;
+  }
+
+  .copyright-footer-mark {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0%;
+    margin-top: 1rem;
+    background-color: darkred;
+    padding: 1rem;
+  }
+
+  .footer-privacy-policy-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.6rem;
+  }
+
+  .footer-privacy-policy-links a {
+    color: white;
+  }
+
+  .footer-privacy-policy-links a:hover {
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    transform: scale(1.2); /* Scale up on hover */
   }
 }
